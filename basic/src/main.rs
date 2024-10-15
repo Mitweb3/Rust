@@ -10,6 +10,9 @@ fn main() {
     structs();
     implementing_structs();
     even();
+    fib();
+    str();
+    struct_example2();
     
 }
 
@@ -154,6 +157,8 @@ fn implementing_structs() {
 
 // write a function is_even that takes a number as an input and returns true if it is even 
 
+// i32 => -, + (with sign)
+// u32 (without sign)
 fn even() {
     println!("{}", is_even(20));
 }
@@ -165,4 +170,57 @@ fn is_even(num:i32) -> bool{
     return false;
 }
 
-// write
+// write a function that checks whether the number is fibonacci or not
+
+fn fib() {
+    println!("{}", fibonacci(8));
+}
+// 0 1 1 2 3 5 8 13 
+fn fibonacci(num: i32) -> i32 {
+    let mut first = 0;
+    let mut second = 1;
+
+    if num == 0 {
+        return  first;
+    }
+    if num == 1 {
+        return 1;
+    }
+    for _ in 1..(num - 1)  {
+        let temp  = second;
+        second = second + first;
+        first = temp;
+    }
+    return second;
+}
+
+// write a function get_string_length that takes a string as an input and returns its length
+
+fn str() {
+    let my_string = String::from("Mit Amin");
+    let length = get_string_length_chars(&my_string);
+    println!("THe number of characters in the string is : {}",length);
+}
+
+fn get_string_length_chars(s: &str) -> usize {
+    s.chars().count()
+}
+
+// using struct square of a number 
+
+struct Number {
+    num : u32
+}
+
+impl Number {
+    fn square(&self) -> u32 {
+        self.num * self.num
+    }
+}
+
+fn struct_example2() {
+    let number = Number {
+        num: 24,
+    };
+    println!("The square of the number is: {}",number.square());
+}
