@@ -1,0 +1,12 @@
+# Ignore Cargo's output directory
+/target/
+
+# Ignore compiled binaries
+*.rs.bk
+
+# Ignore lock files (optional, but typically included)
+/Cargo.lock
+
+# Ignore editor-specific files (VS Code, IntelliJ, etc.)
+.vscode/
+.idea/
