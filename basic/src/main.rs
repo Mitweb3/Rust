@@ -9,6 +9,7 @@ fn main() {
     loops();
     structs();
     implementing_structs();
+    even();
     
 }
 
@@ -151,3 +152,17 @@ fn implementing_structs() {
     println!("The area of rectangle is {}",rect.area());
 }
 
+// write a function is_even that takes a number as an input and returns true if it is even 
+
+fn even() {
+    println!("{}", is_even(20));
+}
+
+fn is_even(num:i32) -> bool{
+    if num % 2 == 0 {
+        return true;
+    }
+    return false;
+}
+
+// write
